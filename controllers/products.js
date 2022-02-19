@@ -1,11 +1,9 @@
-const products = [
-    { name: "Samsung S8", price: 3000, image: "1.jpg", description: "good phone" },
-    { name: "Samsung S7", price: 2000, image: "2.jpg", description: "not bad" },
-    { name: "Samsung S9", price: 4000, image: "3.jpg", description: "very good phone" },
-    { name: "IPhone 7S", price: 4500, image: "4.jpg", description: "nice phone" }
-];
+const Product = require("../models/product");
+
 
 exports.getProduct = (req, res, next) => {
+
+    const products = Product.getAll();
     res.render("index", {
         title: 'Homepage',
         products: products,
@@ -21,12 +19,13 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-    console.log(req.body);
-    products.push({
-        name: req.body.name,
-        price: req.body.price,
-        image: req.body.image,
-        description: req.body.description
-    });
+    const product = new Product(
+        req.body.name,
+        req.body.price,
+        req.body.image,
+        req.body.description
+    );
+
+    product.saveProduct();
     res.redirect('/');
 }
