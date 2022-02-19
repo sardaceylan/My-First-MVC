@@ -1,9 +1,7 @@
 const Product = require("../models/product");
 
 
-exports.getProduct = (req, res, next) => {
-
-    const products = Product.getAll();
+/* exports.getProduct = (req, res, next) => {
     res.render("index", {
         title: 'Homepage',
         products: products,
@@ -26,6 +24,6 @@ exports.postAddProduct = (req, res, next) => {
         req.body.description
     );
 
-    product.saveProduct();
+    product.save();
     res.redirect('/');
-}
+} */
