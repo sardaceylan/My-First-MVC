@@ -1,17 +1,16 @@
 const Product = require("../models/product");
 
 
-/* exports.getProduct = (req, res, next) => {
-    res.render("index", {
-        title: 'Homepage',
-        products: products,
-        path: '/'
+exports.getProducts = (req, res, next) => {
+    res.render("admin/products", {
+        title: 'Admin Products',
+        path: '/admin/products'
     });
 };
 
 exports.getAddProduct = (req, res, next) => {
-    res.render("add-product", {
-        title: 'Add Product',
+    res.render("admin/add-product", {
+        title: 'New Product',
         path: '/admin/add-product'
     });
 };
@@ -24,6 +23,18 @@ exports.postAddProduct = (req, res, next) => {
         req.body.description
     );
 
-    product.save();
+    product.saveProduct();
     res.redirect('/');
-} */
+}
+
+exports.getEditProduct = (req, res, next) => {
+    res.render("admin/edit-product", {
+        title: 'Edit Product',
+        path: '/admin/edit-product'
+    });
+};
+
+exports.postEditProduct = (req, res, next) => {
+    
+    res.redirect('/');
+}
