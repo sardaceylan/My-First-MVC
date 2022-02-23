@@ -1,10 +1,13 @@
-const products = [];
+const products = [
+    { name: 'Samsung S6', price: '2000', imageUrl: '1.jpg', description: 'iyi telefon' },
+    { name: 'Samsung S7', price: '3000', imageUrl: '2.jpg', description: 'iyi telefon' },
+    { name: 'Samsung S8', price: '4000', imageUrl: '3.jpg', description: 'iyi telefon' }];
 
 module.exports = class Product {
-    constructor(name, price, image, description) {
+    constructor(name, price, imageUrl, description) {
         this.name = name;
         this.price = price;
-        this.image = image;
+        this.imageUrl = imageUrl;
         this.description = description;
     }
     saveProduct() {

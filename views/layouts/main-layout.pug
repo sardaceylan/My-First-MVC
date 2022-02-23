@@ -1,18 +1,21 @@
 <!doctype html>
 html(lang="en")
 
-    include ../includes/head.pug
+    include ../includes/head
 
     body
-        include ../includes/navbar.pug
+
+        include ../includes/navbar          
 
         .container.pt-100
             .row
-                include ../includes/col-lg-3.pug
+                .col-lg-3
+                    include ../includes/menu
                    
                 .col-lg-9
 
                     block content
+           
 
             script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
             script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js") 
