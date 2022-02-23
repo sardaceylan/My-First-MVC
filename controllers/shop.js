@@ -10,7 +10,7 @@ exports.getIndex = (req, res, next) => {
     });
 };
 
-exports.getProduct = (req, res, next) => {
+exports.getProducts = (req, res, next) => {
 
     const products = Product.getAll();
     res.render("shop/products", {
@@ -18,6 +18,12 @@ exports.getProduct = (req, res, next) => {
         products: products,
         path: '/products'
     });
+};
+
+exports.getProduct = (req, res, next) => {
+    const productId = req.params.id;
+    console.log(Product.getById(productId));
+    res.redirect("/");
 };
 
 exports.getProductDetails = (req, res, next) => {

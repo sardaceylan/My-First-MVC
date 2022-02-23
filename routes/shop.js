@@ -5,7 +5,12 @@ const shopController = require('../controllers/shop');
 
 router.get('/', shopController.getIndex);
 
-router.get('/products', shopController.getProduct);
+router.get('/products/delete', shopController.getProduct);
+
+router.get('/products/update', shopController.getProduct);
+
+
+router.get('/products/:id', shopController.getProduct);
 
 router.get('/details', shopController.getProductDetails);
 
