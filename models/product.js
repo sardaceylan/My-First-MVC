@@ -1,7 +1,7 @@
 const products = [
-    { id:"13213", name: 'IPhone 6', price: '2000', imageUrl: '1.jpg', description: 'iyi telefon' },
-    { id:"86934", name: 'IPhone 7', price: '3000', imageUrl: '2.jpg', description: 'iyi telefon' },
-    { id:"37436", name: 'Samsung Galaxy J7', price: '4000', imageUrl: '3.jpg', description: 'iyi telefon' }];
+    { id: "13213", name: 'IPhone 6', price: '2000', imageUrl: '1.jpg', description: 'iyi telefon' },
+    { id: "86934", name: 'IPhone 7', price: '3000', imageUrl: '2.jpg', description: 'iyi telefon' },
+    { id: "37436", name: 'Samsung Galaxy J7', price: '4000', imageUrl: '3.jpg', description: 'iyi telefon' }];
 
 module.exports = class Product {
 
@@ -20,17 +20,22 @@ module.exports = class Product {
         return products;
     }
 
-    static getById(id){
-        const product = products.find(i=>i.id === id);
+    static getById(id) {
+        const product = products.find(i => i.id === id);
         return product;
     }
 
-    static Update(product){
-        const index = products.findIndex(i=>i.id===product.id);
+    static Update(product) {
+        const index = products.findIndex(i => i.id === product.id);
 
         products[index].name = product.name;
         products[index].price = product.price;
         products[index].imageUrl = product.imageUrl;
         products[index].description = product.description;
+    }
+
+    static DeleteById(id) {
+        const index = products.findIndex(i => i.id === id);
+        products.splice(index, 1);
     }
 }

@@ -1,3 +1,4 @@
+const req = require('express/lib/request');
 const Product = require('../models/product');
 
 
@@ -51,3 +52,9 @@ exports.postEditProduct = (req, res, next) => {
     Product.Update(product);
     res.redirect('/admin/products?action=edit&id='+product.id);
 };
+
+exports.postDeleteProduct = (req, res,next) => {
+    Product.DeleteById(req.body.id);
+    
+    res.redirect("/admin/products?action=delete");
+}
