@@ -1,3 +1,9 @@
 .pt-100 {
     padding-top: 100px;
 }
+body{
+    background-color: #f1f1f1;
+}
+.card-img-top{
+    height: 283px;
+}

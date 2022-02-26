@@ -1,9 +1,9 @@
 const products = [
     { id: "13213", name: 'IPhone 6', price: '2000', imageUrl: '1.jpg', description: 'iyi telefon', categoryId: 1 },
     { id: "86934", name: 'IPhone 7', price: '3000', imageUrl: '2.jpg', description: 'iyi telefon', categoryId: 1 },
-    { id: "52345", name: 'Huawei Matebook', price: '3000', imageUrl: '2.jpg', description: 'tablet gibi bir bilgisayar', categoryId: 2 },
-    { id: "75634", name: 'iMac Pro', price: '3000', imageUrl: '2.jpg', description: 'devrim niteliğinde bir klasik', categoryId: 2 },
-    { id: "52345", name: 'Beko', price: '3000', imageUrl: '2.jpg', description: 'teknolojinin sınırlarını zorladık', categoryId: 3 }
+    { id: "52345", name: 'Huawei Matebook', price: '10000', imageUrl: 'huawei.jpg', description: 'tablet gibi bir bilgisayar', categoryId: 2 },
+    { id: "75634", name: 'iMac Pro', price: '20000', imageUrl: 'iMac.jpg', description: 'devrim niteliğinde bir klasik', categoryId: 2 },
+    { id: "52345", name: 'Beko', price: '10000', imageUrl: 'beko.jpeg', description: 'teknolojinin sınırlarını zorladık', categoryId: 3 }
 ];
 
 module.exports = class Product {
