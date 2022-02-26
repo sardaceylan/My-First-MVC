@@ -28,7 +28,7 @@ module.exports = class Product {
     }
 
     static getProductsByCategoryId(categoryId) {
-        return products.filter(i => i.categoryId === categoryId);
+        return products.filter(i => i.categoryId == categoryId);
     }
 
     static Update(product) {
