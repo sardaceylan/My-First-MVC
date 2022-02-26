@@ -1,7 +1,10 @@
 const products = [
-    { id: "13213", name: 'IPhone 6', price: '2000', imageUrl: '1.jpg', description: 'iyi telefon' },
-    { id: "86934", name: 'IPhone 7', price: '3000', imageUrl: '2.jpg', description: 'iyi telefon' },
-    { id: "37436", name: 'Samsung Galaxy J7', price: '4000', imageUrl: '3.jpg', description: 'iyi telefon' }];
+    { id: "13213", name: 'IPhone 6', price: '2000', imageUrl: '1.jpg', description: 'iyi telefon', categoryId: 1 },
+    { id: "86934", name: 'IPhone 7', price: '3000', imageUrl: '2.jpg', description: 'iyi telefon', categoryId: 1 },
+    { id: "52345", name: 'Huawei Matebook', price: '3000', imageUrl: '2.jpg', description: 'tablet gibi bir bilgisayar', categoryId: 2 },
+    { id: "75634", name: 'iMac Pro', price: '3000', imageUrl: '2.jpg', description: 'devrim niteliğinde bir klasik', categoryId: 2 },
+    { id: "52345", name: 'Beko', price: '3000', imageUrl: '2.jpg', description: 'teknolojinin sınırlarını zorladık', categoryId: 3 }
+];
 
 module.exports = class Product {
 
@@ -21,8 +24,11 @@ module.exports = class Product {
     }
 
     static getById(id) {
-        const product = products.find(i => i.id === id);
-        return product;
+        return products.find(i => i.id == id);
+    }
+
+    static getProductsByCategoryId(categoryId) {
+        return products.filter(i => i.categoryId === categoryId);
     }
 
     static Update(product) {

@@ -2,7 +2,6 @@ const Category = require("../models/category");
 const Product = require("../models/product");
 
 exports.getIndex = (req, res, next) => {
-
     const products = Product.getAll();
     const categories = Category.GetAll();
     res.render("shop/index", {
@@ -14,7 +13,6 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-
     const products = Product.getAll();
     const categories = Category.GetAll();
 
@@ -25,6 +23,19 @@ exports.getProducts = (req, res, next) => {
         path: '/products'
     });
 };
+
+exports.getProductsByCategoryId = (req, res, next) => {
+    const categoryId = req.params.categoryId;
+    const products = Product.getProductsByCategoryId(categoryId);
+    const categories = Category.GetAll();
+    
+    res.render("shop/products", {
+        title: 'Products',
+        products: products,
+        categories: categories,
+        path: '/products'
+    });
+}
 
 exports.getProduct = (req, res, next) => {
     const product = Product.getById(req.params.id);
