@@ -1,7 +1,7 @@
 const categories = [
     { id: "1", name: "Telefon", description: "Telefon kategori ürünleri" },
-    { id: "2", name: "Bilgisayar", description: "Telefon kategori ürünleri" },
-    { id: "3", name: "Beyaz Eşya", description: "Telefon kategori ürünleri" },
+    { id: "2", name: "Bilgisayar", description: "Bilgisayar kategori ürünleri" },
+    { id: "3", name: "Beyaz Eşya", description: "Beyaz Eşya kategori ürünleri" },
 ]
 
 
@@ -21,7 +21,7 @@ module.exports = class Category {
     }
 
     static GetById(id) {
-        return categories.find(id => id.id === id);
+        return categories.find(i => i.id === id);
     }
 
     static Update(category) {
@@ -33,6 +33,5 @@ module.exports = class Category {
     static DeleteById(id) {
         const index = categories.findIndex(i => i.id === id);
         categories.splice(index, 1);
-
     }
 }

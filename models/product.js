@@ -3,20 +3,22 @@ const products = [
     { id: "86934", name: 'IPhone 7', price: '3000', imageUrl: '2.jpg', description: 'iyi telefon', categoryId: 1 },
     { id: "52345", name: 'Huawei Matebook', price: '10000', imageUrl: 'huawei.jpg', description: 'tablet gibi bir bilgisayar', categoryId: 2 },
     { id: "75634", name: 'iMac Pro', price: '20000', imageUrl: 'iMac.jpg', description: 'devrim niteliğinde bir klasik', categoryId: 2 },
-    { id: "52345", name: 'Beko', price: '10000', imageUrl: 'beko.jpeg', description: 'teknolojinin sınırlarını zorladık', categoryId: 3 }
+    { id: "72345", name: 'Beko', price: '10000', imageUrl: 'beko.jpeg', description: 'teknolojinin sınırlarını zorladık', categoryId: 3 }
 ];
 
 module.exports = class Product {
 
-    constructor(name, price, imageUrl, description) {
+    constructor(name, price, imageUrl, description,categoryId) {
         this.id = (Math.floor(Math.random() * 99999) + 1).toString();
+        this.categoryId = categoryId;
         this.name = name;
         this.price = price;
         this.imageUrl = imageUrl;
         this.description = description;
     }
+    
     saveProduct() {
-        products.push(this)
+        products.push(this);
     }
 
     static getAll() {
@@ -38,6 +40,7 @@ module.exports = class Product {
         products[index].price = product.price;
         products[index].imageUrl = product.imageUrl;
         products[index].description = product.description;
+        products[index].categoryId = product.categoryId;
     }
 
     static DeleteById(id) {
